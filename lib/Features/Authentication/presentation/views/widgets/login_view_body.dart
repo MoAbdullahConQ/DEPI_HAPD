@@ -10,8 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
-
+  LoginViewBody({super.key, required this.email, required this.password});
+  String email;
+  String password;
   @override
   State<LoginViewBody> createState() => _LoginViewBodyState();
 }
@@ -19,18 +20,17 @@ class LoginViewBody extends StatefulWidget {
 class _LoginViewBodyState extends State<LoginViewBody> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  String? emaill;
-  String? passwordd;
-  String email = '';
+
+  String mail = '';
 
   String goRouterLink = '';
 
   void determineRouterLink() {
-    if (email == 'Student@depi.com') {
+    if (mail == 'Student@depi.com') {
       goRouterLink = AppRouter.kHomeStudentView;
-    } else if (email == 'Ministry@depi.com') {
+    } else if (mail == 'Ministry@depi.com') {
       goRouterLink = AppRouter.kHomeMinistryView;
-    } else if (email == 'Company@depi.com') {
+    } else if (mail == 'Company@depi.com') {
       goRouterLink = AppRouter.kHomeCompanyView;
     } else {
       goRouterLink = '';
@@ -69,7 +69,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 controller: _emailController,
                 onChanged: (p0) {
                   setState(() {
-                    emaill = p0;
+                    widget.email = p0;
                   });
                 },
                 prefixIcon: const Icon(
@@ -85,7 +85,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               CustomTextFormField(
                 controller: _passwordController,
                 onChanged: (p0) {
-                  passwordd = p0;
+                  widget.password = p0;
                 },
                 prefixIcon: const Icon(
                   Icons.lock_outline,
@@ -116,12 +116,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               const SizedBox(height: 20),
               CustomButton(
                 onTap: () {
-                  if (emaill != null &&
-                      emaill!.isNotEmpty &&
-                      passwordd != null &&
-                      passwordd!.isNotEmpty) {
+                  if (widget.email != null &&
+                      widget.email.isNotEmpty &&
+                      widget.password != null &&
+                      widget.password.isNotEmpty) {
                     GoRouter.of(context).push(
-                        '${AppRouter.kLoginView}?email=$emaill&password=$passwordd');
+                        '${AppRouter.kLoginView}?email=${widget.email}&password=${widget.password}');
                   } else {
                     showSnackBar(context, 'Please complete data');
                   }

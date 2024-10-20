@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:depi_hapd/Features/Announcement/presentation/views/announcement_minstry_view.dart';
 import 'package:depi_hapd/Features/Announcement/presentation/views/create_announcement_company_view.dart';
 import 'package:depi_hapd/Features/Announcement/presentation/views/create_announcement_ministry_view.dart';
@@ -155,9 +157,15 @@ abstract class AppRouter {
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: kLoginView,
-        builder: (context, state) => const LoginView(),
-      ),
+          path: kLoginView,
+          builder: (context, state) {
+            final email = state.uri.queryParameters['email'];
+            final password = state.uri.queryParameters['password'];
+            return LoginView(
+              email: email!??'',
+              password: password!??'',
+            );
+          }),
       GoRoute(
         path: kRegisterOneView,
         builder: (context, state) => const RegisterOneView(),

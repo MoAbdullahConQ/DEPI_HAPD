@@ -50,7 +50,7 @@ class RegisterModel {
       password: jsonData['password'],
       phone: jsonData['phone'],
       linkedIn: jsonData['linkedIn'],
-      profileImage: jsonData['profileImage'], // Can be null
+      // profileImage: jsonData['profileImage'], // Can be null
       university: jsonData['university'],
       faculty: jsonData['faculty'],
       major: jsonData['major'],

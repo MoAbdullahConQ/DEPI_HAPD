@@ -42,13 +42,17 @@ class RegisterReboImpl implements RegisterRebo {
         'phone': phone,
         'linkedIn': linkedIn,
         'password': password,
-        'profileImage': profileImage,
         'university': university,
         'faculty': faculty,
         'major': major,
         'degree': degree,
         'governmentOfTraining': governmentOfTraining,
       };
+
+      // Conditionally add the profile image if it's provided
+      if (profileImage != null) {
+        body['profileImage'] = profileImage;
+      }
 
       // Make the API call
       var result =

@@ -2,13 +2,14 @@ import 'package:depi_hapd/Features/Authentication/presentation/views/widgets/log
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
-
+  const LoginView({super.key, required this.email, required this.password});
+final String email;
+ final String password;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: SafeArea(
-        child: LoginViewBody(),
+        child: LoginViewBody(email: email, password: password,),
       ),
     );
   }
