@@ -128,18 +128,19 @@ class RegisterTwoViewBody extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 13.0),
                         child: CustomButton(
                           onTap: () {
-                            if (arabicName != null &&
-                                arabicName!.isNotEmpty &&
-                                englishName != null &&
-                                englishName!.isNotEmpty &&
-                                nationalID != null &&
-                                nationalID!.isNotEmpty &&
-                                dateOfBirth != null &&
-                                dateOfBirth!.isNotEmpty &&
-                                gender != null &&
-                                gender!.isNotEmpty &&
-                                government != null &&
-                                government!.isNotEmpty &&
+                            if (
+                              // arabicName != null &&
+                              //   arabicName!.isNotEmpty &&
+                              //   englishName != null &&
+                              //   englishName!.isNotEmpty &&
+                              //   nationalID != null &&
+                              //   nationalID!.isNotEmpty &&
+                              //   dateOfBirth != null &&
+                              //   dateOfBirth!.isNotEmpty &&
+                              //   gender != null &&
+                              //   gender!.isNotEmpty &&
+                              //   government != null &&
+                              //   government!.isNotEmpty &&
                                 email != null &&
                                 email!.isNotEmpty &&
                                 password != null &&

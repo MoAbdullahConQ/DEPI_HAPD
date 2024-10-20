@@ -21,19 +21,15 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  String mail = '';
-
-  String goRouterLink = '';
-
-  void determineRouterLink() {
-    if (mail == 'Student@depi.com') {
-      goRouterLink = AppRouter.kHomeStudentView;
-    } else if (mail == 'Ministry@depi.com') {
-      goRouterLink = AppRouter.kHomeMinistryView;
-    } else if (mail == 'Company@depi.com') {
-      goRouterLink = AppRouter.kHomeCompanyView;
+  String determineRouterLink(String email) {
+    if (email == 'Student@depi.com') {
+      return AppRouter.kHomeStudentView;
+    } else if (email == 'Ministry@depi.com') {
+      return AppRouter.kHomeMinistryView;
+    } else if (email == 'Company@depi.com') {
+      return AppRouter.kHomeCompanyView;
     } else {
-      goRouterLink = '';
+      return '';
     }
   }
 
@@ -121,7 +117,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       widget.password != null &&
                       widget.password.isNotEmpty) {
                     GoRouter.of(context).push(
-                        '${AppRouter.kLoginView}?email=${widget.email}&password=${widget.password}');
+                        '${determineRouterLink(widget.email)}?email=${widget.email}&password=${widget.password}');
                   } else {
                     showSnackBar(context, 'Please complete data');
                   }

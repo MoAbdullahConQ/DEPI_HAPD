@@ -172,26 +172,27 @@ class _RegisterThreeViewBodyState extends State<RegisterThreeViewBody> {
                                   const EdgeInsets.symmetric(horizontal: 13.0),
                               child: CustomButton(
                                 onTap: () {
-                                  if (widget.arabicName != null &&
-                                      widget.arabicName!.isNotEmpty &&
-                                      widget.englishName != null &&
-                                      widget.englishName!.isNotEmpty &&
-                                      widget.nationalID != null &&
-                                      widget.nationalID!.isNotEmpty &&
-                                      widget.dateOfBirth != null &&
-                                      widget.dateOfBirth!.isNotEmpty &&
-                                      widget.gender != null &&
-                                      widget.gender!.isNotEmpty &&
-                                      widget.government != null &&
-                                      widget.government!.isNotEmpty &&
-                                      widget.email != null &&
-                                      widget.email!.isNotEmpty &&
-                                      widget.password != null &&
-                                      widget.password!.isNotEmpty &&
-                                      widget.phone != null &&
-                                      widget.phone!.isNotEmpty &&
-                                      widget.linkedIn != null &&
-                                      widget.linkedIn!.isNotEmpty &&
+                                  if (
+                                    // widget.arabicName != null &&
+                                    //   widget.arabicName!.isNotEmpty &&
+                                    //   widget.englishName != null &&
+                                    //   widget.englishName!.isNotEmpty &&
+                                    //   widget.nationalID != null &&
+                                    //   widget.nationalID!.isNotEmpty &&
+                                    //   widget.dateOfBirth != null &&
+                                    //   widget.dateOfBirth!.isNotEmpty &&
+                                    //   widget.gender != null &&
+                                    //   widget.gender!.isNotEmpty &&
+                                    //   widget.government != null &&
+                                    //   widget.government!.isNotEmpty &&
+                                    //   widget.email != null &&
+                                    //   widget.email!.isNotEmpty &&
+                                    //   widget.password != null &&
+                                    //   widget.password!.isNotEmpty &&
+                                    //   widget.phone != null &&
+                                    //   widget.phone!.isNotEmpty &&
+                                    //   widget.linkedIn != null &&
+                                    //   widget.linkedIn!.isNotEmpty &&
                                       university != null &&
                                       university!.isNotEmpty &&
                                       faculty != null &&

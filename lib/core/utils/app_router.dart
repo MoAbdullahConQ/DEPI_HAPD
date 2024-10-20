@@ -159,11 +159,11 @@ abstract class AppRouter {
       GoRoute(
           path: kLoginView,
           builder: (context, state) {
-            final email = state.uri.queryParameters['email'];
-            final password = state.uri.queryParameters['password'];
+            final email = state.uri.queryParameters['email']??'';
+            final password = state.uri.queryParameters['password']??'';
             return LoginView(
-              email: email!??'',
-              password: password!??'',
+              email: email!,
+              password: password!,
             );
           }),
       GoRoute(
